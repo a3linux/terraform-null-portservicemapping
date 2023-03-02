@@ -8,6 +8,19 @@ This module focus on AWS Security Group rules, but it should be also useful for 
 
 # Usage
 
+Module instance, 
+
+```terraform
+module "portservicemapping" {
+  source  = "a3linux/portservicemapping/null"
+  version = "0.1.0"
+
+  port_service_mappings = {
+    service1 = [11000, 11000, "tcp", "REST API Service I"]
+  }
+}
+```
+
 Check example/complete/main.tf for reference. 
 
 By default, the module include some popular port service mappings already, such as http, https, mysql, mssql, postgresql, redis and so forth. Add customized ones with variable port_service_mappings when instance this module. 
